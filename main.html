@@ -1,0 +1,24 @@
+<html>
+
+<head>
+        <title>Geolocalización</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link href="/Estilos/places.css" rel="stylesheet" type="text/css">
+        <link href="/Estilos/font.css" rel="stylesheet" type="text/css">
+        <script src="Scripts/main_script.js" type="application/javascript"></script>
+    </head>
+     <body>
+         <h1>Registrar Lugar</h1>
+        <input type="text" placeholder="NombreLugar" id="nombrelugar">
+        <input type="number" placeholder="PrecioConsumo" id="precioconsumo">
+        <input type="number" placeholder="Calificacion (1 al 5)" id="calificacion">
+         <input type="text" placeholder="Categoria" id="categoria">
+         <img id="mapa">
+        <button onclick="registro()">Registrar</button>
+    </body>
+    
+      <script>
+        window.addEventListener('load', localizar, true);
+    </script>
+</html>

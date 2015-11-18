@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Registro</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link href="/Estilos/login.css" rel="stylesheet" type="text/css">
+        <link href="/Estilos/font.css" rel="stylesheet" type="text/css">
+    </head>
+    
+    <body>
+        <h1>Registro</h1>
+        
+       <input type="text" placeholder="Correo o Nombre de Usuario" id="usuario"><br>
+        <input type="password" placeholder="Contraseña" id="password"><br>
+        <input type="password" placeholder="Confirmar Contraseña" id="password-confirm"><br>
+        
+        <p id="mensaje">Texto</p>
+        
+        <button onclick="login()">¡Registrame!</button><br>
+        
+        
+    </body>
+    
+    <script>
+        function login(){
+            usuario = document.getElementById('usuario').value;
+            password = document.getElementById('password').value;
+            pass_conf = document.getElementById('password-confirm').value;
+            
+            if(password == pass_conf){
+                mensaje.innerHTML = "Registrado con éxito";
+                localStorage.setItem('usuario', usuario);
+                localStorage.setItem('password', password);
+                document.getElementById('mensaje').style.transition = "0.3s all";
+                window.location.assign("main.html");
+                long = pos.coords.longitude;
+                lat = pos.coords.latitude;
+                grados = pos.coords.heading;
+                localStorage.setItem('long', long);
+                localStorage.setItem('lat', lat);
+                localStorage.setItem('grados', grados);
+            }else{
+                document.getElementById('usuario').style.border= "3px solid red";
+                document.getElementById('password').style.border= "3px solid red";
+                document.getElementById('correo').style.border= "3px solid red";
+                
+                mensaje = document.getElementById('mensaje');
+                mensaje.style.opacity = "1";
+                menasje.style.transition = ".6s all";
+                mensaje.innerHTML = "ERROR: Usuario o Contraseña  no son válidos";
+                
+                navigator.vibrate('100');
+                navigator.vibrate('200');
+            }
+        }
+    </script>
+    
+</html>

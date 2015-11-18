@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link href="/Estilos/login.css" rel="stylesheet" type="text/css">
+        <link href="/Estilos/font.css" rel="stylesheet" type="text/css">
+        <script src="Scripts/main_script.js"></script>
+    </head>
+    
+    <body>
+        <h1>Login</h1>
+        
+        <input type="text" placeholder="Correo o Nombre de Usuario" id="usuario"><br>
+        <input type="password" placeholder="Contraseña" id="password"><br>
+        
+        <p id="mensaje">Texto</p>
+        
+        <button onclick="login()">Iniciar Sesión</button><br>
+        
+        <div>
+            <p onclick="registro()">o puedes Registrarte</p>
+        </div>
+        
+    </body>
+    
+    <script>
+        window.addEventListener('load', localizar, true);
+
+        function registro(){
+            window.location.assign("registro.html")
+        }
+        function login(){
+            usuario = document.getElementById('usuario').value;
+            password = document.getElementById('password').value;
+            
+            usuarioLocal = localStorage.getItem('usuario');
+            passwordLocal = localStorage.getItem('password');
+            
+            if(usuario == usuarioLocal && password == passwordLocal){
+                window.location.assign("main.html");
+            }else{
+                document.getElementById('usuario').style.border= "3px solid red";
+                document.getElementById('password').style.border= "3px solid red";
+                
+                mensaje = document.getElementById('mensaje');
+                mensaje.style.opacity = "1";
+                menasje.style.transition = ".6s all";
+                mensaje.innerHTML = "ERROR: Usuario o Contraseña  no son válidos";
+                
+                navigator.vibrate('100');
+                navigator.vibrate('200');
+            }
+        }
+    </script>
+    
+</html>

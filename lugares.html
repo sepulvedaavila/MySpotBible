@@ -1,0 +1,33 @@
+<html>
+
+<head>
+        <title>Geolocalización</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link href="/Estilos/places.css" rel="stylesheet" type="text/css">
+        <link href="/Estilos/font.css" rel="stylesheet" type="text/css">
+        <script src="Scripts/main_script.js" type="application/javascript"></script>
+    </head>
+     <body>
+         <h1>Lugares</h1>
+         <div id="lugares">
+         </div>
+         <button onclick="regresar()">Regresar</button>
+    </body>
+    
+      <script>
+        window.addEventListener('load', cargarLugares, true);
+          function regresar(){
+              window.location.assign("main.html");
+          }
+        function cargarLugares(){
+            cont = localStorage.getItem('contador');
+            i = 1;
+            do{
+                lugares = document.getElementById('lugares');
+                lugares.innerHTML += "<p>Nombre del Lugar:</p><p>"+localStorage.getItem('lugar'+i)+"</p><p>Precio:</p><p>"+localStorage.getItem('precio'+i)+"</p><p>Categoría:</p><p>"+localStorage.getItem('categoria'+i)+"</p><br><img src=https://maps.google.com/maps/api/staticmap?center="+localStorage.getItem('lat'+i)+","+localStorage.getItem('long'+i)+"&zoom=15&markers="+localStorage.getItem('lat'+i)+","+localStorage.getItem('long'+i)+"|"+localStorage.getItem('lat'+i)+","+localStorage.getItem('long'+i)+"&size=175x175>";
+                i++;
+            }while(i < cont);
+        }
+    </script>
+</html>

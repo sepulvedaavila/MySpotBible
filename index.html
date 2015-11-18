@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Calculadora</title>
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width = device-width, user-scalable = no">
+        <link href='Estilos/index.css' rel="stylesheet" type="text/css">
+        <link href='Estilos/font.css' rel="stylesheet" type="text/css">
+    </head>
+    
+    <body>
+        <div>
+            <h1 id="logo">My Spot Bible</h1>
+        </div>
+        <div>
+            <h1 id="load">Cargando</h1>
+            <img id="wheel" src="ajax-loader.gif">
+        </div>
+    </body>
+    <script>
+        window.addEventListener('load', splashscreen, true);
+        function splashscreen() {
+            setTimeout(function() {
+                window.location.assign('login.html');
+            }, 2000);
+        }
+    </script>
+</html>
