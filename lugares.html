@@ -34,7 +34,7 @@
                 i = 1;
                 do{
                     lugares = document.getElementById('lugares');
-                    lugares.innerHTML += "<p class='title'>Nombre del Lugar:</p><p>"+localStorage.getItem('lugar'+i)+"</p><p class='title'>Precio:</p><p>"+localStorage.getItem('precio'+i)+"</p><p class='title'>Categoría:</p><p>"+localStorage.getItem('categoria'+i)+"</p><br><p class='title'>Ubicación:</p><div id='imgdiv'><img src=https://maps.google.com/maps/api/staticmap?center="+localStorage.getItem('lat'+i)+","+localStorage.getItem('long'+i)+"&zoom=15&markers="+localStorage.getItem('lat'+i)+","+localStorage.getItem('long'+i)+"|"+localStorage.getItem('lat'+i)+","+localStorage.getItem('long'+i)+"&size=175x175></div>";
+                    lugares.innerHTML += "<p class='title'>Nombre del Lugar:</p><p>"+localStorage.getItem('lugar'+i)+"</p><p class='title'>Precio:</p><p>"+localStorage.getItem('precio'+i)+"</p><p class='title'>Categoría:</p><p>"+localStorage.getItem('categoria'+i)+"</p><br><p class='title'>Ubicación:</p><div class='map'><img src=https://maps.google.com/maps/api/staticmap?center="+localStorage.getItem('lat'+i)+","+localStorage.getItem('long'+i)+"&zoom=15&markers="+localStorage.getItem('lat'+i)+","+localStorage.getItem('long'+i)+"|"+localStorage.getItem('lat'+i)+","+localStorage.getItem('long'+i)+"&size=175x175></div>";
                     i++;
                 }while(i < cont);
             }
