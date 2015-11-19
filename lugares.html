@@ -9,7 +9,9 @@
         <script src="Scripts/main_script.js" type="application/javascript"></script>
     </head>
      <body>
-         <h1>Lugares</h1>
+         <div id="header">
+            <h1>Lugares</h1>
+        </div>
          <div id="lugares">
          </div>
          <button onclick="regresar()">Regresar</button>
@@ -21,13 +23,21 @@
               window.location.assign("main.html");
           }
         function cargarLugares(){
-            cont = localStorage.getItem('contador');
-            i = 1;
-            do{
+            if(localStorage.getItem('contador') <= 1){
                 lugares = document.getElementById('lugares');
-                lugares.innerHTML += "<p>Nombre del Lugar:</p><p>"+localStorage.getItem('lugar'+i)+"</p><p>Precio:</p><p>"+localStorage.getItem('precio'+i)+"</p><p>Categoría:</p><p>"+localStorage.getItem('categoria'+i)+"</p><br><img src=https://maps.google.com/maps/api/staticmap?center="+localStorage.getItem('lat'+i)+","+localStorage.getItem('long'+i)+"&zoom=15&markers="+localStorage.getItem('lat'+i)+","+localStorage.getItem('long'+i)+"|"+localStorage.getItem('lat'+i)+","+localStorage.getItem('long'+i)+"&size=175x175>";
-                i++;
-            }while(i < cont);
+                lugares.innerHTML += "<div id = 'noPlace'><h1>No hay lugares guardados<br> :( </h1></div>";
+            }
+            else{
+                lugares = document.getElementById('lugares');
+                lugares.innerHTML = "";
+                cont = localStorage.getItem('contador');
+                i = 1;
+                do{
+                    lugares = document.getElementById('lugares');
+                    lugares.innerHTML += "<p class='title'>Nombre del Lugar:</p><p>"+localStorage.getItem('lugar'+i)+"</p><p class='title'>Precio:</p><p>"+localStorage.getItem('precio'+i)+"</p><p class='title'>Categoría:</p><p>"+localStorage.getItem('categoria'+i)+"</p><br><p class='title'>Ubicación:</p><div id='imgdiv'><img src=https://maps.google.com/maps/api/staticmap?center="+localStorage.getItem('lat'+i)+","+localStorage.getItem('long'+i)+"&zoom=15&markers="+localStorage.getItem('lat'+i)+","+localStorage.getItem('long'+i)+"|"+localStorage.getItem('lat'+i)+","+localStorage.getItem('long'+i)+"&size=175x175></div>";
+                    i++;
+                }while(i < cont);
+            }
         }
     </script>
 </html>

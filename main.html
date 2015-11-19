@@ -9,13 +9,19 @@
         <script src="Scripts/main_script.js" type="application/javascript"></script>
     </head>
      <body>
-         <h1>Registrar Lugar</h1>
+         <div id="header">
+            <h1>Registrar Lugar</h1>
+         </div>
         <input type="text" placeholder="NombreLugar" id="nombrelugar">
         <input type="number" placeholder="PrecioConsumo" id="precioconsumo">
         <input type="number" placeholder="Calificacion (1 al 5)" id="calificacion">
          <input type="text" placeholder="Categoria" id="categoria">
          <img id="mapa">
         <button onclick="registro()">Registrar</button>
+         
+         <div id="footer">
+            <p onclick="verLugares()">Ver Lugares</p>
+        </div>
     </body>
     
       <script>

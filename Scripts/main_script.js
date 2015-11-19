@@ -30,4 +30,9 @@ function registro(){
     localStorage.setItem('lat'+contador, lat);
     contador++;
     localStorage.setItem('contador', contador);
+    window.location.assign('lugares.html');
+}
+
+function verLugares(){
+    window.location.assign("lugares.html");
 }
